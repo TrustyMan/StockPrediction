@@ -1,3 +1,4 @@
+var listID = 0;
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
@@ -36,26 +37,63 @@ function openPage(pageName,elmnt,color) {
 $(document).ready(function(){
   $(".add-stock").click(function(){
     $("#add-one").remove();
+
+    $(".nothing").remove();
+
     var str = $("#selectList").val();
-    var html = '<div class="panel-heading"><span>' + str + '</span><button class="btn-delete ' + str + '" style="float: right;">Delete</button></div>';
+    listID ++;
+    var html = '<div id="myList' + listID + '" class="panel-heading"><span>' + str + '</span><button class="btn-delete ' + str + '" onclick="deleteStock(' + "'myList" + listID + "'" + ')" style="float: right;">Delete</button></div>';
     $("#myList").append(html);
 
+    html = '<div id="myList' + listID + '" class="col-md-2 bM"><div class="top" style="background-color: pink;"><p class="pp">'+str+'</p><br><p class="center">'+"Display Data"+'</p><br><p class="center">' + "Footer" + '</p></div></div>';
+    $(".myStock").append(html);
     $('.btn-delete').click(function(){
       $(this).parent().remove();
       if(!$("#myList span").length){
         //console.log("ss");
+        // <div class="col-md-2">
+        //     <div class="top" style="background-color: pink;">
+        //         <p>PPPP</p>
+        //         <br>
+        //         <p>PPPP</p>
+        //         <br>
+        //         <p>PPPP</p>
+        //     </div>
+        // </div>
+
         $("#myList").html('<span id="add-one">Add new One</span>');
       }
     });
-    
   });
+
+  $("#logout_btn").click(function() {
+    console.log('dddd');
+    $.ajax({
+        url: 'SessionControl/destroy',
+        type: 'post',
+        data: {
+            
+        },
+        success: function(res) {
+            console.log(res);
+            //location.reload();
+        }
+    });
+});
 });
 
-// function delete1(str){
-  
-//   //console.log($("#myList").html());
-//   if(!$("#myList span").length){
-//     console.log("ss");
-//     $("#myList").html('<span id="add-one">Add new One</span>');
-//   }
-// }
+function deleteStock(str){
+  listID --;
+  $("#"+str).remove();
+  //console.log($("#myList").html());
+  if(!$("#myList span").length){
+    console.log("ss");
+    $("#myList").html('<span id="add-one">Add new One</span>');
+  }
+  if(!$(".myStock div").length){
+    var html = '<div class="col-md-2 nothing"><div class="top" style="background-color: pink;"><br><br><p class="center">No Stock</p><br><br></div></div>';
+    $(".myStock").append(html);
+  }
+}
+
+

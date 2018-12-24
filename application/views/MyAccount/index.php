@@ -27,45 +27,50 @@
     <script type="text/javascript" src="./assets/js/MyAccount/main.js"></script>
 </head>
 <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="./"><span class="glyphicon glyphicon-log-in"></span> Home</a></li>
+            <li><a href="javascript:void(0);"><?php echo $_SESSION['username'] ?>:</a></li>
+
+            <li><a href="./"><p id="logout_btn"><span class="glyphicon glyphicon-user"></span>Sign Out</p></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
     <div class="row">
         <h1>MY PORTFOLIO</h1>        
     </div>
     <div class="myStock row">
-        <div class="col-md-2">
+        <div class="col-md-2 nothing bM">
             <div class="top" style="background-color: pink;">
-                <p>PPPP</p>
                 <br>
-                <p>PPPP</p>
                 <br>
-                <p>PPPP</p>
+                <p class="center">No Stock</p>
+                <br>
+                <br>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="top" style="background-color: pink;">
-                <p>PPPP</p>
-                <br>
-                <p>PPPP</p>
-                <br>
-                <p>PPPP</p>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="top" style="background-color: pink;">
-                <p>PPPP</p>
-                <br>
-                <p>PPPP</p>
-                <br>
-                <p>PPPP</p>
-            </div>
-        </div>
-
     </div>
 
     
 
     <div class="Another row">
-
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">My Lists</div>
                 <div class="panel-body">
@@ -90,13 +95,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">My Screens</div>
-                <div class="panel-body center1">Creat New Screen</div>
+                <div class="panel-body center">Creat New Screen</div>
             </div>    
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="nav nav-tabs panel-heading">
                 <span class="active col-md-6"><a data-toggle="tab" href="#home">Top Gainers</a></span>
@@ -119,13 +124,13 @@
     </div>
 
     <div class="Other row">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading thrid-row">Markets Outlook</div>
                 <div class="panel-body center">Add Stock</div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading thrid-row">Sector Overview</div>
                 <div class="panel-body center">Add Stock</div>
