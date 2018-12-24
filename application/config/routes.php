@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'MainController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//$route['display/(:any)'] = 'controller_pages/display_page/$1';
+ // $route['(:any)/ppp/(:any)'] = 'controller_pages/display_page/$1/$2';
+
+

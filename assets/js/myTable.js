@@ -20,6 +20,7 @@ function drawTable(){
 			html += "<td>" + table_data[i].low + "</td>";  
 			html += "<td>" + table_data[i].close + "</td>";
 			html += "<td>" + table_data[i].volume + "</td>";
+			html += "<td>" + table_data[i].volume + "</td>";
 			html += "</tr>";
 		}
 	}
@@ -36,7 +37,7 @@ function getTableData(){
         }
         else{
           $(".loader").css("display","none");
-          $(".main").css("display","inline-block");
+          $(".main").css("opacity","1");
           load_status = 0;
         }
 		drawTable();

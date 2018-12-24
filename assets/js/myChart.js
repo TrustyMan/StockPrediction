@@ -36,9 +36,12 @@ function reloadChart() {
     }
     else{
       $(".loader").css("display","none");
-      $(".main").css("display","block");
+      $(".main").css("opacity","1");
       load_status = 0;
     }
+    // for(var i = 0;i < chartData.length; i++){
+    //   chartData[i].date = new Date();
+    // }
     console.log(chartData);
     chart = AmCharts.makeChart("chartdiv", {
           "type": "stock",
@@ -48,51 +51,25 @@ function reloadChart() {
             "fieldMappings": [{
               "fromField": "open",
               "toField": "open"
-            }, {
+            },{
+              "fromField": "close",
+              "toField": "close"
+            },{
+              "fromField": "price",
+              "toField": "price"
+            },{
               "fromField": "high",
               "toField": "high"
             }, {
               "fromField": "low",
               "toField": "low"
             }, {
-              "fromField": "close",
-              "toField": "close"
-            }, {
               "fromField": "volume",
               "toField": "volume"
             }],
             "compared": false,
             "categoryField": "date",
-      
-            /**
-             * data loader for data set data
-             */
-          //   "dataLoader": {
-          //     "url": "./include/dataLoader.php",
-          //     "format": "json",
-          //     "type": "post",
-          //     "data": { "model": model },
-          //     "showErrors": true,
-          //     "postProcess": function(data) {
-          //       // console.log(data.historyData);
-          //       var stock_type = data.stock_type;
-          //       var c_st_data = data.current_stock_data;
-          //       var i_html = getCurrentStockBodyHtml(stock_type, c_st_data);
-          //       $('.cur-history-stock').html(i_html);
-          //       $(".stock-row").click(function(){
-          //         var new_model = $(this).data('model');
-          //         if (model != new_model) {
-          //           console.log('haha');
-          //           model = new_model;
-          //           // location.href = "./?model=" + new_model;
-          //           reloadChart();
-          //         }
-          //       })
-          //       // console.log(i_html);
-          //       return data.historyData;
-          //     }
-          //  },
-          "dataProvider": chartData,
+            "dataProvider": chartData,
           }],
           
           "panels": [{
@@ -106,13 +83,13 @@ function reloadChart() {
                 "closeField": "close",
                 "highField": "high",
                 "lowField": "low",
-                "valueField": "price",
+                "valueField": "close",
                 "lineColor": "#fff",
                 "fillColors": "#fff",
-                "negativeLineColor": "#db4c3c",
-                "negativeFillColors": "#db4c3c",
+                "negativeLineColor": "#fff",
+                "negativeFillColors": "#fff",
                 "fillAlphas": 1,
-                "balloonText": "open:<b>[[open]]</b><br>close:<b>[[close]]</b><br>low:<b>[[low]]</b><br>high:<b>[[high]]</b>",
+                "balloonText": "open:<b>[[open]]</b><br>price:<b>[[close]]</b><br>low:<b>[[low]]</b><br>high:<b>[[high]]</b>",
                 "comparedGraphLineThickness": 2,
                 "columnWidth": 0.7,
                 "useDataSetColors": false,
@@ -141,14 +118,13 @@ function reloadChart() {
       
               "stockGraphs": [{
                 "valueField": "volume",
-                "openField": "open",
                 "type": "column",
                 "showBalloon": false,
                 "fillAlphas": 1,
                 "lineColor": "#fff",
                 "fillColors": "#fff",
-                "negativeLineColor": "#db4c3c",
-                "negativeFillColors": "#db4c3c",
+                "negativeLineColor": "#fff",
+                "negativeFillColors": "#fff",
                 "useDataSetColors": false
               }],
       
@@ -273,6 +249,10 @@ $(document).ready(function() {
   //setInterval(reloadChart, 5000);
   reloadChart();
   getTableData();
+
+  $(".content").dblclick(function(evt){
+    location.href = "ViewDetail";
+  });  
 });
     
 

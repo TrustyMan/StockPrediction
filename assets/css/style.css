@@ -37,6 +37,7 @@ a {
 	outline: none;
 	display: inline;
 	background: transparent;
+	padding: 20px;
   }
   
   .charttools input.selected {
@@ -49,6 +50,11 @@ a {
 	width: /*calc( 100% - 400px )*/60%;
 	/* display: inline; */
 	float: left;
+	 background: slategrey;
+    border: 5px solid grey;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 3%;
 }
 .sidebar {
 	margin-left: 5%;
@@ -60,7 +66,6 @@ a {
 /* Amchart CSS */
 /* ////////////////////////////////////////////////// */
 #chartdiv {
-	margin-top: 20px;
   width: 100%;
   height: 480px;
   position: relative;
@@ -93,6 +98,7 @@ a {
 .main-body {
 	margin: 0 auto;
 	display: flex;
+	margin-top: 1%;
 }
 
 .news-content {
@@ -292,6 +298,13 @@ a {
   border-radius:2px;
   padding: 0px 40px 0px 20px;
   font-weight: bold;
+
+}
+.header-background{
+	margin-top: 30px;
+    border: 5px solid grey;
+    border-radius: 10px;
+    background: slategrey;
 }
 
 .header-limiter .header-user-menu:before{
@@ -467,6 +480,7 @@ table.right-list tbody tr {
 /*	border-radius: 10px;*/
 	text-align: center;
 	border-collapse: collapse;
+	border: 2px solid grey;
 }
 .footer-table:hover{
 	cursor: pointer;
@@ -484,14 +498,13 @@ table.right-list tbody tr {
 .footer{
 	margin-top: 30px;
 	font-size: 14px;
-	width: 57%;
+	width: 100%;
 	float: left;
 	margin-left: 3%;
 }
 
 .center{
 	text-align: center;
-	margin-top: 1%;
 }
 
 .number{
@@ -517,4 +530,24 @@ table.right-list tbody tr {
     /* -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1); */
     -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer-left{
+	width: 60%;
+	float: left;
+	background-color: white;
+	border: 5px solid grey;
+    border-radius: 10px;
+
+}
+.footer-right{
+	background: white;
+    width: 33%;
+    float: left;
+    margin-left: 2%;
+    float: left;
+    margin-top: -10%;
+}
+thead.table-side{
+	background-color: mintcream;
 }
