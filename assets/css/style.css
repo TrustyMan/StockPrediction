@@ -3,7 +3,6 @@ body, html
   font:14px/1.5 Arial, Helvetica, sans-serif;
   font-family: Verdana;
   font-size: 12px;
-  background: #000;
   margin: 0;
   padding: 0;
 }
@@ -88,7 +87,7 @@ a {
   box-sizing: border-box;
 }
 .amChartsInputField {
-  color: #000;
+  
 } 
 .amcharts-chart-div a {
   display:none !important;

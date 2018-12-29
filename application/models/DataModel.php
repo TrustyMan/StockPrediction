@@ -3,11 +3,43 @@ class DataModel extends CI_Model{
 	public function __construct() {
 		parent::__construct();
 		$this->db = $this->load->database('default',true);
-		
-	 }
+	}
 	public function index(){
 
 	}
+
+	public function getRealTimeData(){
+		$res = array();
+		while(1){
+			$sql = "SELECT * FROM tbl_Realtime";
+			$result = $this->db->query($sql);
+			if($result->num_rows % 5 == 0){
+				break;
+			}
+		}
+		
+		$sql = "SELECT * FROM (SELECT * FROM tbl_Realtime ORDER BY id DESC LIMIT 5) sub ORDER BY id ASC";
+		$result = $this->db->query($sql);
+		$res['realtime'] = $result->result_array();
+		while(1){
+			$sql = "SELECT * FROM tbl_TopGL";
+			$result = $this->db->query($sql);
+			if($result->num_rows() == 8){
+				break;
+			}	
+		}
+		$res['top_gl'] = $result->result_array();
+		return $res;
+	}
+
+	public function getChartData(){
+		$res = array();
+		$sql = "SELECT * FROM tbl_Realtime";
+		$result = $this->db->query($sql);
+		$res = $result->result_array();
+		return $res;
+	}
+
 	public function getData($model, $stock){
 		// $query = "SELECT * FROM news";
 		// $result = $this->db->query($query);
@@ -47,24 +79,6 @@ class DataModel extends CI_Model{
 		//$query = "SELECT * FROM RealTimeData where TickerName='".$condition."'";
 		$query = "SELECT * FROM stocksdata where company='".$company."'";
 		$result = $this->db->query($query);
-		// while ($row = $result->fetch_assoc())
-		// foreach ($result->result_array() as $row)
-		// {
-		// 	$item = array();
-		// 	$item['price'] = floatval(str_replace(",",'', $row['CurrentValue']));
-		// 	$item['high'] = floatval(str_replace(",",'', $row['HighValue']));
-		// 	$item['low'] = floatval(str_replace(",",'', $row['LowValue']));
-		// 	$item['volume'] = floatval(str_replace(",",'', $row['Volume']));
-		// $volume = str_replace(",",'', $row['Volume']);
-		// if(substr($volume, -1) == "M"){
-		// 	$volume = floatval(substr_replace($volume, "", -1)) * 1000000;
-		// }
-		// else if(substr($volume, -1) == "K"){
-		// 	$volume = floatval(substr_replace($volume, "", -1)) * 1000;
-		// }
-		// 	//$item['date'] =  date("Y-m-d\TH:i:s.000\Z", strtotime($row['updatetime']));
-		//     array_push($chartData, $item);
-		// }
 
 
 		foreach ($result->result_array() as $row)
@@ -105,27 +119,4 @@ class DataModel extends CI_Model{
 		return $res;
 	}
 
-	public function getTableData($model){
-		//$sql = "SELECT * FROM stocksdata WHERE company='".$model."'";
-		$this->db = $this->load->database('default',true);
-		$sql = "SELECT * FROM (SELECT * FROM stocksdata WHERE company='".$model."'ORDER BY id DESC LIMIT 100) sub ORDER BY id ASC";
-		$result = $this->db->query($sql);
-		$res = array();
-		foreach ($result->result_array() as $row) {
-			$item = array();
-			$item['price'] = floatval(str_replace(",",'', $row['price']));
-			$item['open'] = floatval(str_replace(",",'', $row['sopen']));
-			$item['close'] = floatval(str_replace(",",'', $row['previousclose']));
-			$item['high'] = floatval(str_replace(",",'', $row['high']));
-			$item['low'] = floatval(str_replace(",",'', $row['low']));
-			$item['volume'] = floatval(str_replace(",",'', $row['volume']));
-			// $item['date'] =  date("Y-m-d\TH:i:s.000\Z", strtotime($row['updatetime']));
-			$item['date'] =  $row['updatetime'];
-			$item['change'] = floatval(str_replace(",",'', $row['schange']));
-			$item['percent'] = floatval(str_replace(",",'', $row['percent']));
-			$item['company'] = $row['company'];
-			array_push($res, $item);
-		}
-		return $res;
-	}
 }

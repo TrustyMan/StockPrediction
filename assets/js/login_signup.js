@@ -27,14 +27,14 @@ $(document).ready(function() {
     });
 
     // When clicking on the button close or the mask layer the popup closed
-    $('a.close, #mask').live('click', function() { 
+    $('a.close, #mask').click(function() { 
         $('#mask , .login-popup').fadeOut(300 , function() {
             $('#mask').remove();  
         }); 
         return false;
     });
 
-    $("#signin_btn").live("click", function(evt){
+    $("#signin_btn").click(function(){
         var check = true;
          for (var i = 0; i < inputEle.length; i++) {
             if ($(inputEle[i]).val() == "") {
@@ -71,7 +71,7 @@ $(document).ready(function() {
         
     });
 
-    $("#signup_btn").live("click", function(evt){
+    $("#signup_btn").click(function(evt){
         var check = true;
          for (var i = 0; i < inputEle1.length; i++) {
             if (validate(inputEle1[i]) == false) {
@@ -105,13 +105,12 @@ $(document).ready(function() {
         
     });
 
-    $("#logout_btn").live('click', function(evt) {
-        console.log('dddd');
+    $("#logout_btn").click(function(evt) {
         $.ajax({
-            url: 'MainController/reload',
+            url: 'SessionControl/destroy',
             type: 'post',
             data: {
-                'type': 'logout',
+                
             },
             success: function(res) {
                 console.log(res);

@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
             
-            <li><a href="./"><span class="glyphicon glyphicon-log-in"></span> Home</a></li>
+            <li><a href="./"><span class="glyphicon glyphicon-home"></span> Home</a></li>
             <li><a href="javascript:void(0);"><?php echo $_SESSION['username'] ?>:</a></li>
 
             <li><a href="./"><p id="logout_btn"><span class="glyphicon glyphicon-user"></span>Sign Out</p></a></li>

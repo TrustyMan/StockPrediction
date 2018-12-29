@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => '35.245.69.105:3306',
 	'username' => 'root',
 	'password' => 'admin123456',
-	'database' => 'yahoofinance',
+	'database' => 'Stock_Prediction',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -95,12 +95,13 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['DataAnalysis'] = array(
+
+$db['Stock_Prediction'] = array(
 	'dsn'	=> '',
 	'hostname' => '35.245.69.105:3306',
 	'username' => 'root',
 	'password' => 'admin123456',
-	'database' => 'DataAnalysis',
+	'database' => 'Stock_Prediction',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

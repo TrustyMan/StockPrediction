@@ -14,10 +14,21 @@ class DataController extends CI_Controller {
 		echo json_encode($result);
 	}
 
-	public function getTableData(){
-		$model = $this->input->post('model');
+	public function getRealTimeData(){
 		$this->load->model('DataModel');
-		$result = $this->DataModel->getTableData($model);
+		$result = $this->DataModel->getRealTimeData();
+		echo json_encode($result);
+	}
+
+	public function getChartData(){
+		$this->load->model('DataModel');
+		$result = $this->DataModel->getChartData();
+		echo json_encode($result);
+	}
+
+	public function getRealChartData(){
+		$this->load->model('DataModel');
+		$result = $this->DataModel->getRealTimeData();
 		echo json_encode($result);
 	}
 }
