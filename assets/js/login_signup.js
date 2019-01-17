@@ -36,13 +36,14 @@ $(document).ready(function() {
 
     $("#signin_btn").click(function(){
         var check = true;
-         for (var i = 0; i < inputEle.length; i++) {
+        for (var i = 0; i < inputEle.length; i++) {
             if ($(inputEle[i]).val() == "") {
                 $(inputEle[i]).css("border-color", "red");
                 //console.log($(inputEle[i]).val());
                 check = false;
             }
         }
+        
         if(check == true){
             $.ajax({
                 url: 'SignController/checkuser',
@@ -53,10 +54,12 @@ $(document).ready(function() {
                     'password': $("#password").val()
                 },
                 success: function(res) {
-                    var result = JSON.parse(res);
-                    console.log(result);
-                    if(result.length != 0){
+                    if(res == 1){
                         location.reload();
+                    }
+                    else{
+                        $(inputEle[0]).css("border-color", "red");
+                        $(inputEle[1]).css("border-color", "red");
                     }
                     //location.href = "/index.php/MainController/index";
                     //location.reload();
@@ -72,13 +75,21 @@ $(document).ready(function() {
     });
 
     $("#signup_btn").click(function(evt){
+        console.log("Buuuu");
+
         var check = true;
-         for (var i = 0; i < inputEle1.length; i++) {
+        for (var i = 0; i < inputEle1.length; i++) {
             if (validate(inputEle1[i]) == false) {
                 $(inputEle1[i]).css("border-color", "red");
                 //console.log($(inputEle[i]).val());
                 check = false;
             }
+        }
+
+        if($(inputEle1[2]).val() != $(inputEle1[3]).val()){
+            check = false;
+            $(inputEle1[2]).css("border-color", "red");
+            $(inputEle1[3]).css("border-color", "red");
         }
 
         if(check == true){
@@ -94,7 +105,11 @@ $(document).ready(function() {
                 success: function(res) {
                     console.log(res);
                     if(res == 1){
+                        alert("Welcome to be member!");
                         location.reload();
+                    }
+                    else{
+                        alert("Something went wrong!");
                     }
                 }, 
                 failure: function(err) {
@@ -110,7 +125,7 @@ $(document).ready(function() {
             url: 'SessionControl/destroy',
             type: 'post',
             data: {
-                
+            
             },
             success: function(res) {
                 console.log(res);

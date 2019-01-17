@@ -75,33 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '35.245.69.105:3306',
+	'hostname' => '35.197.135.249:3306',
 	'username' => 'root',
-	'password' => 'admin123456',
-	'database' => 'Stock_Prediction',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-
-$db['Stock_Prediction'] = array(
-	'dsn'	=> '',
-	'hostname' => '35.245.69.105:3306',
-	'username' => 'root',
-	'password' => 'admin123456',
-	'database' => 'Stock_Prediction',
+	'password' => 'password',
+	'database' => 'stockprediction',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

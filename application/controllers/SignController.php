@@ -25,10 +25,10 @@ class SignController extends CI_Controller {
         );
         $this->load->model('SignModel');
         $result = $this->SignModel->checkuser($arr);
-        if($result != []){
+        if($result == 1){
         	$_SESSION['username'] = $arr['username'];
         }
-        echo json_encode($result);
+        echo $result;
 	}
 }
 ?>

@@ -7,273 +7,254 @@
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
     <title>ML Predictive</title>
 
-    <!-- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script> -->
-    <script type="text/javascript" src="./assets/js/Home/amchart.js"></script>
+
+    <script type="text/javascript" src="./assets/js/Chart/amchart.js"></script>
     <!-- <script src="http://www.amcharts.com/lib/3/serial.js"></script> -->
-    <script type="text/javascript" src="./assets/js/Home/serial.js"></script>
+    <script type="text/javascript" src="./assets/js/Chart/serial.js"></script>
     <!-- <script src="http://www.amcharts.com/lib/3/themes/light.js"></script> -->
-    <script type="text/javascript" src="./assets/js/Home/light.js"></script>
+    <script type="text/javascript" src="./assets/js/Chart/light.js"></script>
     <!-- <script src="http://www.amcharts.com/lib/3/amstock.js"></script> -->
-    <script src="./assets/js/Home/amstock.js"></script>
+    <script src="./assets/js/Chart/amstock.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- cutome css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/landing.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/login_signup.css">
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./assets/css/login_signup.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/Home/style.css">
+    <script src="./assets/js/login_signup.js"></script>
+    <script src="./assets/js/main.js"></script>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-    <script type="text/javascript" src="./assets/js/login_signup.js"></script>
-    <script type="text/javascript" src="./assets/js/Home/main.js"></script>
-
-
-    <!-- <script type="text/javascript" src="./assets/js/myChart.js"></script>
-    <script type="text/javascript" src="./assets/js/login_signup.js"></script>
-    <script type="text/javascript" src="./assets/js/function.js"></script>
-    <script type="text/javascript" src="./assets/js/myTable.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
-
-    <!-- <script type="text/javascript" src="./common/jquery-ui.min.js"></script> 
-    <script type="text/javascript" src="./Scripts/config.js"></script>
-    <script data-main="RealTimeStockChart" src="./Scripts/require.js"></script> -->
 </head>
 
-<body>
-    <div class="ui active centered inline loader position op1 ppp"></div>
+<body id="content">
+	<div>
+		<div class="row">
+	        <nav class="navbar navbar-inverse">
+	          <div class="container-fluid">
+	          	<div class="col-md-2"></div>
+	            <div class="navbar-header col-md-2">
+	              <div class="navbar-brand"><img src="./assets/img/logo.png" style="width: 120px; margin-top: -10px;"></div>
+	            </div>
 
-    <div class="op qqq">
-        <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="javascript:void(0);">Comapny Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <!-- <ul class="nav navbar-nav">
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">ALGN<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">ALGN</a></li>
-                    <li><a href="#">IBM</a></li>
-                    <li><a href="#">AAL</a></li>
-                    <li><a href="#">POLY.L</a></li>
-                    <li><a href="#">RRS.L</a></li>
-                  </ul>
-                </li>
-              </ul> -->
-              <ul class="nav navbar-nav navbar-right">
-                <?php 
-                if( !isset($_SESSION['username']) || ($_SESSION['username'] == '')) {
-                ?>
-                <li><a href="#signup-box" class="login-window"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                <li><a href="#login-box" class="login-window"><span class="glyphicon glyphicon-log-in"></span>Sign in</a></li>
-                <?php
-                } else {
-                ?>
-                <li><a href="./MyAccount"><span class="glyphicon glyphicon-circle-arrow-right"></span> My Account</a></li>
-                <!-- <li><a href="javascript:void(0);"><?php echo $_SESSION['username'] ?>:</a></li> -->
-                <li><a href="./"><p id="logout_btn"><span class="glyphicon glyphicon-log-out"></span>Sign Out</p></a></li>
-                <?php } ?>
-              </ul>
-            </div>
-          </div>
-        </nav>
+	            <div class="navbar-header nav-search col-md-5">
+			        <input class="form-control" type="search" placeholder="Search for symbol, feelings ..." style="display: inline;" />
+			        <button type="submit" class="btn" style="display: inline; background-color: white;"><i class="glyphicon glyphicon-search"></i></button>
+	            </div>
 
-        <div>
-            <div class="row">
-                <div class="main-col col-md-6">
-                    <div class="stock-row row">
-                        <div class="col-md-4">
-                           <div class="top ALIGN">
-                                <br>
-                                <p><span class="left">Percent</span><span class="right">PP</span></p>
-                                
-                                <p class="center">No Stock</p>
-                                <br>
-                            </div> 
-                        </div>
-                        <div class="col-md-4">
-                           <div class="top AAL">
-                                <br>
-                                <p><span class="left">Percent</span><span class="right">PP</span></p>
-                                
-                                <p class="center">No Stock</p>
-                                <br>
-                                
-                            </div> 
-                        </div>
-                        <div class="col-md-4">
-                           <div class="top RRS">
-                                <br>
-                                <p><span class="left">Percent</span><span class="right">PP</span></p>
-                                
-                                <p class="center">No Stock</p>
-                                <br>
-                            </div> 
-                        </div>
-                    </div>
+	            <div class="collapse navbar-collapse col-md-2" id="myNavbar">
+	              <ul class="nav navbar-nav navbar-right">
+	                <?php 
+	                if( !isset($_SESSION['username']) || ($_SESSION['username'] == '')) {
+	                ?>
+	                <li><a href="#signup-box" class="login-window"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	                <li><a href="#login-box" class="login-window"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+	                <?php
+	                } else {
+	                ?>
+	                <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-circle-arrow-right"></span> My Account</a></li>
+	                <!-- <li><a href="javascript:void(0);"><?php echo $_SESSION['username'] ?>:</a></li> -->
+	                <li><a href="javascript:void(0);"><p id="logout_btn"><span class="glyphicon glyphicon-log-out"></span>Sign Out</p></a></li>
+	                <?php } ?>
+	              </ul>
+	            </div>
+
+	            <div class="col-md-1"></div>
+	          </div>
+
+	          <div class="container-fluid second-row">
+	          	<div class="col-md-2"></div>
+	            <div class="col-md-1 sub-nav sub-nav-active">
+	              <span id="home">Home</span>
+	            </div>
+	            <div class="col-md-1 sub-nav">
+	              <span id="portfolio">Portfolio</span>
+	            </div>
+	            <div class="col-md-1 sub-nav">
+	              <span id="tracker">Tracker</span>
+	            </div>
+	            <div class="col-md-1 sub-nav">
+	              <span id="delta">Delta</span>
+	            </div>
+	          </div>
+	        </nav>
+    	</div>
 
 
-                    <div class="list-row row">
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading heading-font">My Lists</div>
-                                <div class="panel-body">
-                                    <div id="myList">
-                                        <span id="add-one">Add new One<button class="btn-delete" style="display: none;"></button></span>
-                                    </div>
+	    <div class="row">
+	    	<div class="col-md-2">
+		       	<div class="top" id="usa">
+		            
+		        </div> 
+		    </div>
+		    <div class="col-md-2 col-half-offset">
+		       <div class="top" id="eu">
 
-                                </div>
-                                <div class="panel-footer">
-                                    <div>
-                                        <select name="skills" class="ui selection dropdown" id="selectList">
-                                            <option class="ALGN" value="ALGN">ALGN</option>
-                                            <option class="IBM" value="IBM">IBM</option>
-                                            <option class="AAL" value="AAL">AAL</option>
-                                            <option class="POLY.L" value="POLY.L">POLY.L</option>
-                                            <option class="RRS.L" value="RRS.L">RRS.L</option>
-                                        </select>
-                                        <?php 
-                                        if( !isset($_SESSION['username']) || ($_SESSION['username'] == '')) {
-                                        ?>
-                                        <button class="add-stock ui button" disabled>
-                                            Add One
-                                        </button>
-                                        <?php
-                                        } else {
-                                        ?>
-                                        <button class="add-stock ui button">
-                                            Add One
-                                        </button>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+		       </div> 
+		    </div>
+		    <div class="col-md-2 col-half-offset">
+				<div class="top" id="asia">
 
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="nav nav-tabs panel-heading heading-font">
-                                <span class="active col-md-6 gloser center"><a data-toggle="tab" href="#home">Top Gainers</a></span>
-                                <span class="col-md-6 menu gloser center"><a data-toggle="tab" href="#menu1">Top Losers</a></span>
-                              </div>
-                            
-                           
-                              <div class="tab-content panel-body">
-                                <div id="home" class="tab-pane fade in active">
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="gainer_first_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="gainer_first_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="gainer_second_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="gainer_second_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="gainer_third_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="gainer_third_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="gainer_fourth_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="gainer_fourth_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                </div>
-                                <div id="menu1" class="tab-pane fade">
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="loser_first_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="loser_first_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="loser_second_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="loser_second_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="loser_third_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="loser_third_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4"><span id="loser_fourth_symbol">HaHa<span></div>
-                                    <div class="col-md-4"><span id="loser_fourth_value">HeHE</span></div>
-                                    <div class="col-md-2"></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>          
-                        </div>
-                    </div>
+				</div> 
+		    </div>
+		    <div class="col-md-2 col-half-offset">
+				<div class="top" id="fx">
 
-                </div>
+				</div> 
+		    </div>
+		    <div class="col-md-2 col-half-offset">
+				<div class="top" id="crypto">
 
-                <div class="col-md-6">
-                    <div class="row">
-                        <div id="chartdiv"></div>
-                    </div>
-                    <div class="row">
-                        <table class="firstTable">
-                          <tr class="identify-row" id="ALGN" data-id="0">
-                              <th class="stockname"></th>
-                              <th clas="price"></th>
-                              <th class="change"></th>
-                          </tr>
+				</div>
+		    </div>
 
-                          <tr class="identify-row" id="IBM" data-id="1">
-                              <th class="stockname"></th>
-                              <th clas="price"></th>
-                              <th class="change"></th>
-                          </tr>
-                          <tr class="identify-row" id="AAL" data-id="2">
-                              <th class="stockname"></th>
-                              <th clas="price"></th>
-                              <th class="change"></th>
-                          </tr>
-                          <tr class="identify-row" id="POLY" data-id="3">
-                              <th class="stockname"></th>
-                              <th clas="price"></th>
-                              <th class="change"></th>
-                          </tr>
-                          <tr class="identify-row" id="RRS" data-id="4">
-                              <th class="stockname"></th>
-                              <th clas="price"></th>
-                              <th class="change"></th>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
+	    </div>
+	    <div class="row other">
 
-            <div class="row row1">
-                <table class="w3-table-all">
-                    
-                </table>
-            </div>
-        </div>   
-    </div>
-     
+	    	<div class="panel-group col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="bold">My Lists</span>
+					</div>
+					<div class="panel-body">
+						<div class="row" id="mylist_body">
+							<span class="col-md-4">abc</span>
+							<span class="col-md-4">edf</span>
+							<span class="col-md-4">wer</span>
+						</div>
+					</div>
+					<div class="panel-footer more">
+						<span>More</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-group col-md-3">
+			    <div class="panel panel-default">
+			      	<div class="panel-heading">
+						<span class="bold">My Signals</span>
+					</div>
+					<div class="panel-body">
+
+					</div>
+					<div class="panel-footer more">
+						<span>More</span>
+					</div>
+			    </div>
+			</div>
+
+			<!-- <div class="panel-group col-md-3">
+			    <div class="tab">
+					<button class="tablinks active col-md-6" onclick="openCity(event, 'TopGainers')">TopGainers</button>
+					<button class="tablinks col-md-6" onclick="openCity(event, 'TopLosers')">TopLosers</button>
+				</div>
+
+				<div id="TopGainers" class="tabcontent">
+				  	<div class="row heading">
+						<span class="col-md-4">Symbol</span>
+						<span class="col-md-4">Last Status</span>
+						<span class="col-md-4">Current</span>
+					</div>
+					<div class="row body">
+						<span class="col-md-4">AAL</span>
+						<span class="col-md-4">179,00</span>
+						<span class="col-md-4">15%</span>
+					</div>
+				</div>
+
+				<div id="TopLosers" class="tabcontent">
+						<h3>Paris</h3>
+						<p>Paris is the capital of France.</p> 
+				</div>
+
+				<div class="panel-footer more more1">
+						<span>More</span>
+				</div>
+			</div> -->
+
+			<div class="col-md-3">
+				<div class="tab">
+					<button class="tablinks active col-md-6" onclick="openCity(event, 'TopGainers')">TopGainers</button>
+					<button class="tablinks col-md-6" onclick="openCity(event, 'TopLosers')">TopLosers</button>
+				</div>
+
+				<div id="TopGainers" class="tabcontent">
+				</div>
+
+				<div id="TopLosers" class="tabcontent">
+				</div>
+
+				<div class="panel-footer more more1">
+						<span>More</span>
+				</div>		
+			</div>
+
+			<div class="col-md-3">
+				<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<div id="calendar" class="economic-calendar">
+						<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+						{
+						  "width": "100%",
+						  "height": "300",
+						  "locale": "en",
+						  "importanceFilter": "-1,0,1"
+						}
+						</script>
+					</div>
+				</div>
+				<span style="height: 45px; width: 45px; background-color: white; position: absolute; bottom: 2px; right: 18px;"></span>
+			</div>			
+	    </div>
+
+
+	    <!-- Graph -->
+	    <div class="row">
+	    	<div class="col-md-10 col-md-offset-1">
+	    		<div id="chartdiv"></div>
+	    	</div>
+	    	<div class="com-md-1"></div> 	
+	    </div>
+
+	    <!-- Table -->
+	    <div class="row other">
+	    	<div class="col-md-10 col-md-offset-1">
+	    		<table class="table table-bordered table-striped">
+			        <thead>
+				        <tr>
+				            <th><b>Symbol</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>Last Price($)</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>Change(%)</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>ROI–1 Week(%)</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>ROI–3 Month</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>ROI–1 Year(%)</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>Signal</b><i class="fa fa-fw fa-sort"></i></th>
+				            <th><b>Delta Score</b><i class="fa fa-fw fa-sort"></i></th>
+				        </tr>
+			        </thead>
+
+			        <tbody id="stock_table_body">
+			        	<!-- <tr>
+				            <td><span>Symbol</span></td>
+				            <td><span>Last Price($)</span></td>
+				            <td><span>Change(%)</span></td>
+				            <td><span>ROI–1 Week(%)</span></td>
+				            <td><span>ROI–3 Month</span></td>
+				            <td><span>ROI–1 Year(%)</span></td>
+				            <td><span>Signal</span></td>
+				            <td><span>Delta Score</span></td>
+				        </tr> -->
+				    </tbody>
+	    		</table>
+	    	</div>
+	    </div>
+	</div>
+    
+
     <div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="./assets/img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
         <div class="signin">

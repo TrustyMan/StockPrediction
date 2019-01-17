@@ -1,0 +1,227 @@
+body{
+	padding-left: 5px;
+	padding-right: 5px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.navbar{
+	background: lightgrey;
+	border-color: lightgrey;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-header, .navbar-brand{
+	color: black !important;
+}
+
+
+.form-control{
+	width: 50%;
+	padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.nav-search{
+	margin-top: 5px;
+	text-align: center;
+}
+
+.second-row{
+	font-family: Times New Roman;
+	font-size: 18px;
+	color: #040421;
+}
+
+.sub-nav:hover{
+	cursor: pointer;
+	color: grey;
+	background: white;
+	border-radius: 10px;
+}
+
+.sub-nav-active{
+	color: grey;
+	background: white;
+	border-radius: 10px;
+}
+
+div.top{
+  background: lightsalmon;
+  border-radius: 10px;
+}
+
+.left{
+	margin-left: 5% !important;
+}
+
+.right{
+
+	float: right !important;
+	margin-right: 2%;
+	background: salmon;
+	padding: 1% 1%;
+	border-radius: 10px;
+	font-size: 10px;
+	/*padding-left: 10%;*/
+	/*padding-right: 10%;*/
+}
+
+.center{
+	text-align: center !important;
+}
+
+.other{
+	margin-top: 15px !important;
+}
+
+/*.five-one{
+	width: 20%;
+}
+
+@media (min-width: 992px)
+.five-one {
+    width: 16.66666667%;
+}*/
+
+.col-half-offset{
+    margin-left:4.166666667%
+}
+
+select.select{
+	background: lightsalmon;
+	border:none;
+	outline: 0px;
+}
+select:focus {
+outline: none !important;
+}
+
+.more{
+	text-align: center;
+	color: #26a7af;
+}
+
+.more:hover{
+	cursor: pointer;
+	color: blue;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.panel-body{
+	height: 220px;
+}
+
+.top-active{
+	background: white;
+}
+
+.top-panel{
+	width: 50%;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  /*background-color: #ccc;*/
+  background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom: none;
+  height: 208px;
+  /*border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;*/
+}
+
+.more1{
+	border: 1px solid #ccc;
+  	background-color: #f1f1f1;
+}
+
+/*.tradingview-widget-container {
+  position: relative;
+}
+.tradingview-widget-container:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+} */
+
+.hidden{
+	height: 45px;
+	width: 45px; 
+	background-color: white;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+#chartdiv {
+	width: 100%;
+	height: 420px;
+}
+
+.nav-row{
+	position: fixed;
+}
+
+#select_stock_list{
+
+}
+
+#select_stock_list:hover{
+	cursor: pointer;
+}
+
+#left-col{
+	width: 60%;
+}
+
+#right-col{
+	width: 40%;
+}
