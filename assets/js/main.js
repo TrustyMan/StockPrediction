@@ -10,9 +10,10 @@ var TickerAS = [];
 var TickerFX = [];
 var TickerCR = [];
 
-current_index = ["0", "0", "0", "0", "0"];
+var current_index = ["0", "0", "0", "0", "0"];
 
-id_list = ["usa", "eu", "asia", "fx", "crypto"];
+var id_list = ["usa", "eu", "asia", "fx", "crypto"];
+var ticker_data;
 
 $(document).ready(function(){
 	$("#TopGainers").css("display", "block");
@@ -90,6 +91,7 @@ function getTickerData(){
 	$.post("TickerData/GetData", {}, function(response){
 		var result = JSON.parse(response);
 
+		ticker_data = result;
 		console.log("Hey");
 
 		TickerUS = result[0];
@@ -99,22 +101,25 @@ function getTickerData(){
 		TickerCR = result[4];
 
 		for(var i = 0;i < 5;i ++){
-			var str = "";
-			str += '<br>';
-			str += '<p><span class="left">' + result[i][current_index[i]].price + '</span><span class="right">' + result[i][current_index[i]].changevalue + "(" + result[i][current_index[i]].percent + ")" + '</span></p>';
-			str += '<p class="center">';
-			str += '<select class="select" id="select' + i + '"">';
-			str += '<option value="0">' + result[i][0].symbol + '</option>';
-			str += '<option value="1">' + result[i][1].symbol + '</option>';
-			str += '<option value="2">' + result[i][2].symbol + '</option>';
-			str += '<option value="3">' + result[i][3].symbol + '</option>';
-			str += '<option value="4">' + result[i][4].symbol + '</option>';
-			str += '<option value="5">' + result[i][5].symbol + '</option>';
-			str += '</select>';
-			str += '</p>';
-			str += '<br>';
+			// var str = "";
+			// str += '<br>';
+			// str += '<p><span class="left">' + result[i][current_index[i]].price + '</span><span class="right">' + result[i][current_index[i]].changevalue + "(" + result[i][current_index[i]].percent + ")" + '</span></p>';
+			// str += '<p class="center">';
+			// str += '<select class="select" id="select' + i + '"">';
+			// str += '<option value="0">' + result[i][0].symbol + '</option>';
+			// str += '<option value="1">' + result[i][1].symbol + '</option>';
+			// str += '<option value="2">' + result[i][2].symbol + '</option>';
+			// str += '<option value="3">' + result[i][3].symbol + '</option>';
+			// str += '<option value="4">' + result[i][4].symbol + '</option>';
+			// str += '<option value="5">' + result[i][5].symbol + '</option>';
+			// str += '</select>';
+			// str += '</p>';
+			// str += '<br>';
 
-			$("#" + id_list[i]).html(str);
+			// $("#" + id_list[i]).html(str);
+
+			$("#select"+i).parent().parent().children().children("span.left").html(result[i][current_index[i]].price);
+			$("#select"+i).parent().parent().children().children("span.right").html(result[i][current_index[i]].changevalue);
 
 			var element = document.getElementById("select"+i);
     		element.value = current_index[i];
@@ -122,24 +127,29 @@ function getTickerData(){
 		}
 		$("#select0").on('change', function(){
 			current_index[0] = this.value;
-			// console.log("Hi" + this.value);
-    	});
+			$(this).parent().parent().children().children("span.left").html(ticker_data[0][current_index[0]].price);
+			$(this).parent().parent().children().children("span.right").html(ticker_data[0][current_index[0]].changevalue);
+		});
     	$("#select1").on('change', function(){
 			current_index[1] = this.value;
-			// console.log("Hi" + this.value);
-    	});
+			$(this).parent().parent().children().children("span.left").html(ticker_data[1][current_index[1]].price);
+			$(this).parent().parent().children().children("span.right").html(ticker_data[1][current_index[1]].changevalue);
+		});
     	$("#select2").on('change', function(){
 			current_index[2] = this.value;
-			// console.log("Hi" + this.value);
-    	});
+			$(this).parent().parent().children().children("span.left").html(ticker_data[2][current_index[2]].price);
+			$(this).parent().parent().children().children("span.right").html(ticker_data[2][current_index[2]].changevalue);
+		});
     	$("#select3").on('change', function(){
 			current_index[3] = this.value;
-			// console.log("Hi" + this.value);
-    	});
+			$(this).parent().parent().children().children("span.left").html(ticker_data[3][current_index[3]].price);
+			$(this).parent().parent().children().children("span.right").html(ticker_data[3][current_index[3]].changevalue);
+		});
     	$("#select4").on('change', function(){
-			current_index[5] = this.value;
-			// console.log("Hi" + this.value);
-    	});
+			current_index[4] = this.value;
+			$(this).parent().parent().children().children("span.left").html(ticker_data[4][current_index[4]].price);
+			$(this).parent().parent().children().children("span.right").html(ticker_data[4][current_index[4]].changevalue);
+		});
 
     	getTickerData();
 	});
