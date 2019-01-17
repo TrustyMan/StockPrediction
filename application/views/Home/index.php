@@ -88,27 +88,87 @@
 	    <div class="row">
 	    	<div class="col-md-2">
 		       	<div class="top" id="usa">
-		            
+					<br>
+					<p><span class="left"></span><span class="right"></span></p>
+					<p class="center">
+						<select class="select" id="select0">
+							<option value="0">Dow</option>
+							<option value="1">S&P 500</option>
+							<option value="2">Nasdaq</option>
+							<option value="3">GlobalDow</option>
+							<option value="4">Gold</option>
+							<option value="5">Oil</option>
+						</select>
+					</p>
+					<br>
 		        </div> 
 		    </div>
 		    <div class="col-md-2 col-half-offset">
 		       <div class="top" id="eu">
-
+		       		<br>
+					<p><span class="left"></span><span class="right"></span></p>
+					<p class="center">
+						<select class="select" id="select1">
+							<option value="0">FTSE 100</option>
+							<option value="1">DAX</option>
+							<option value="2">CAC 40</option>
+							<option value="3">FTSE MIB</option>
+							<option value="4">IBEX 35</option>
+							<option value="5">Stoxx 600</option>
+						</select>
+					</p>
+					<br>
 		       </div> 
 		    </div>
 		    <div class="col-md-2 col-half-offset">
 				<div class="top" id="asia">
-
+					<br>
+					<p><span class="left"></span><span class="right"></span></p>
+					<p class="center">
+						<select class="select" id="select2">
+							<option value="0">Asia Dow</option>
+							<option value="1">Nikkei 225</option>
+							<option value="2">Hang Seng</option>
+							<option value="3">Shanghai</option>
+							<option value="4">Sensex</option>
+							<option value="5">Singapore</option>
+						</select>
+					</p>
+					<br>
 				</div> 
 		    </div>
 		    <div class="col-md-2 col-half-offset">
 				<div class="top" id="fx">
-
+					<br>
+					<p><span class="left"></span><span class="right"></span></p>
+					<p class="center">
+						<select class="select" id="select3">
+							<option value="0">Euro</option>
+							<option value="1">Yen</option>
+							<option value="2">Pound</option>
+							<option value="3">Australia$</option>
+							<option value="4">DXY Index</option>
+							<option value="5">WSJ $ Idx</option>
+						</select>
+					</p>
+					<br>
 				</div> 
 		    </div>
 		    <div class="col-md-2 col-half-offset">
 				<div class="top" id="crypto">
-
+					<br>
+					<p><span class="left"></span><span class="right"></span></p>
+					<p class="center">
+						<select class="select" id="select4">
+							<option value="0">Bitcoin USD</option>
+							<option value="1">Ethereum USD</option>
+							<option value="2">Ripple USD</option>
+							<option value="3">Bitcoin Cash USD</option>
+							<option value="4">Litecoin USD</option>
+							<option value="5">Monero USD</option>
+						</select>
+					</p>
+					<br>
 				</div>
 		    </div>
 
